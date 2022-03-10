@@ -13,11 +13,12 @@
         <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_add_course.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_add_jugador.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_edit_jugador.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_login.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_register.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_login.xml" value="0.4" />
+        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/activity_register.xml" value="0.4" />
+        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.4" />
         <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/course_rv_item.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/layout/jugador_rv_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mariu/AndroidStudioProjects/RealMadrid/app/src/main/res/menu/menu_main.xml" value="0.11302083333333333" />
       </map>
     </option>

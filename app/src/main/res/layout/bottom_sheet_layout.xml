@@ -6,14 +6,17 @@
     android:background="@color/black_shade_1"
     android:padding="4dp">
 
-    <!--text view for displaying jugador name-->
+    <!--text view for displaying jugador nombre-->
     <TextView
         android:id="@+id/idTVJugadorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         android:padding="4dp"
-        android:text="Jugador Name"
+        android:text="Jugador Nombre:"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />
@@ -43,16 +46,19 @@
         android:text="Description"
         android:textColor="@color/white" />
 
-    <!--text view for displaying jugador best suited for-->
+    <!--text view for displaying jugador best Posicion for-->
     <TextView
         android:id="@+id/idTVPosicion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVJugadorDesc"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"
-        android:text="Suited for"
+        android:text="Pozicion:"
         android:textColor="@color/white" />
 
     <!--text view for displaying jugador price-->
@@ -61,10 +67,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVPosicion"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"
-        android:text="Price"
+        android:text="Precio:"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />

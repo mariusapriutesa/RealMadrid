@@ -21,7 +21,7 @@ public class AddJugadorActivity extends AppCompatActivity {
 
     //creando variables para su botón, edite texto, base de datos firebase, referencia de base de datos, barra de progreso.
     private Button addJugadorBtn;
-    private TextInputEditText jugadorNameEdt, jugadorDescEdt, jugadorPriceEdt, bestSuitedEdt, jugadorImgEdt, jugadorLinkEdt;
+    private TextInputEditText jugadorNameEdt, jugadorDescEdt, jugadorPriceEdt, bestPosicionEdt, jugadorImgEdt, jugadorLinkEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private ProgressBar loadingPB;
@@ -36,7 +36,7 @@ public class AddJugadorActivity extends AppCompatActivity {
         jugadorNameEdt = findViewById(R.id.idEdtJugadorName);
         jugadorDescEdt = findViewById(R.id.idEdtJugadorDescription);
         jugadorPriceEdt = findViewById(R.id.idEdtJugadorPrice);
-        bestSuitedEdt = findViewById(R.id.idEdtPosicion);
+        bestPosicionEdt = findViewById(R.id.idEdtPosicion);
         jugadorImgEdt = findViewById(R.id.idEdtJugadorImageLink);
         jugadorLinkEdt = findViewById(R.id.idEdtJugadorLink);
         loadingPB = findViewById(R.id.idPBLoading);
@@ -52,12 +52,12 @@ public class AddJugadorActivity extends AppCompatActivity {
                 String jugadorName = jugadorNameEdt.getText().toString();
                 String jugadorDesc = jugadorDescEdt.getText().toString();
                 String jugadorPrice = jugadorPriceEdt.getText().toString();
-                String bestSuited = bestSuitedEdt.getText().toString();
+                String bestPosicion = bestPosicionEdt.getText().toString();
                 String jugadorImg = jugadorImgEdt.getText().toString();
                 String jugadorLink = jugadorLinkEdt.getText().toString();
                 jugadorID = jugadorName;
                 //en la línea de abajo estamos pasando todos los datos a nuestra clase modal.
-                JugadorRVModal jugadorRVModal = new JugadorRVModal(jugadorID, jugadorName, jugadorDesc, jugadorPrice, bestSuited, jugadorImg, jugadorLink);
+                JugadorRVModal jugadorRVModal = new JugadorRVModal(jugadorID, jugadorName, jugadorDesc, jugadorPrice, bestPosicion, jugadorImg, jugadorLink);
                 //en la línea de abajo estamos llamando a un evento de valor agregado para pasar datos a la base de datos de firebase.
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

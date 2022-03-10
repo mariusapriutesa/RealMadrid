@@ -13,20 +13,23 @@
         android:layout_height="wrap_content"
         android:background="@color/black_shade_1">
 
-        <!--image view for our jugador-->
+        <!--image view para nuestro jugador-->
         <ImageView
             android:id="@+id/idIVJugador"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop" />
 
-        <!--text view for jugador name-->
+        <!--text view para jugador name-->
         <TextView
             android:id="@+id/idTVJUgadorName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/idIVJugador"
-            android:layout_margin="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
             android:layout_toStartOf="@id/idTVCousePrice"
             android:layout_toLeftOf="@id/idTVCousePrice"
             android:padding="4dp"
@@ -35,7 +38,7 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <!--text view for jugador price-->
+        <!--text view para jugador price-->
         <TextView
             android:id="@+id/idTVCousePrice"
             android:layout_width="wrap_content"
@@ -46,7 +49,7 @@
             android:layout_margin="3dp"
             android:gravity="center"
             android:padding="4dp"
-            android:text="Price"
+            android:text="Precio"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
