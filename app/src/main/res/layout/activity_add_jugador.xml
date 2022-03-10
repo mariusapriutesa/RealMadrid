@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--edit text for jugador name-->
+            <!--edit text para jugador name-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorName"
                 style="@style/LoginTextInputLayoutStyle"
@@ -42,7 +42,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for jugadore price-->
+            <!--edit text para jugadore price-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorPrice"
                 style="@style/LoginTextInputLayoutStyle"
@@ -70,9 +70,9 @@
                     app:boxStrokeColor="@color/purple_200" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for jugador suited for-->
+            <!--edit text para jugador suited for-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILJugadorSuitedFor"
+                android:id="@+id/idTILJugadorPosicion"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtSuitedFor"
+                    android:id="@+id/idEdtPosicion"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -96,7 +96,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for jugador image link-->
+            <!--edit text para jugador image link-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorImageLink"
                 style="@style/LoginTextInputLayoutStyle"
@@ -122,7 +122,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for jugador link-->
+            <!--edit text para jugador link-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorLink"
                 style="@style/LoginTextInputLayoutStyle"
@@ -149,7 +149,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--edit text for jugador description-->
+            <!--edit text para jugador description-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorDescription"
                 style="@style/LoginTextInputLayoutStyle"
@@ -175,7 +175,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--button for adding a new jugador-->
+            <!--button para adding au nuevo jugador-->
             <Button
                 android:id="@+id/idBtnAddJugador"
                 android:layout_width="match_parent"
@@ -191,7 +191,7 @@
 
         </LinearLayout>
 
-        <!--progress bar for loading indicator-->
+        <!--progress bar para encargar el indicador-->
         <ProgressBar
             android:id="@+id/idPBLoading"
             android:layout_width="wrap_content"

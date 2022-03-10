@@ -8,14 +8,14 @@
     android:background="@color/black_shade_1"
     tools:context=".MainActivity">
 
-    <!--recycler view for our data-->
+    <!--recycler view para our data-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVJugadores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/jugador_rv_item" />
 
-    <!--progress bar for loading indicator-->
+    <!--progress bar para  loading indicator-->
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"

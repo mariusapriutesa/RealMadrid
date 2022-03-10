@@ -36,7 +36,7 @@ public class AddJugadorActivity extends AppCompatActivity {
         jugadorNameEdt = findViewById(R.id.idEdtJugadorName);
         jugadorDescEdt = findViewById(R.id.idEdtJugadorDescription);
         jugadorPriceEdt = findViewById(R.id.idEdtJugadorPrice);
-        bestSuitedEdt = findViewById(R.id.idEdtSuitedFor);
+        bestSuitedEdt = findViewById(R.id.idEdtPosicion);
         jugadorImgEdt = findViewById(R.id.idEdtJugadorImageLink);
         jugadorLinkEdt = findViewById(R.id.idEdtJugadorLink);
         loadingPB = findViewById(R.id.idPBLoading);

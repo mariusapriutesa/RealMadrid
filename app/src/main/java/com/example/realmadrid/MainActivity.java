@@ -171,13 +171,13 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
         //e inicializarlos con sus identificaciones.
         TextView jugadorNameTV = layout.findViewById(R.id.idTVJugadorName);
         TextView jugadorDescTV = layout.findViewById(R.id.idTVJugadorDesc);
-        TextView suitedForTV = layout.findViewById(R.id.idTVSuitedFor);
+        TextView PosicionTV = layout.findViewById(R.id.idTVPosicion);
         TextView priceTV = layout.findViewById(R.id.idTVJugadorPrice);
         ImageView jugadorIV = layout.findViewById(R.id.idIVJugador);
         // en la línea de abajo estamos configurando datos para diferentes vistas en la línea de abajo.
         jugadorNameTV.setText(modal.getJugadorName());
         jugadorDescTV.setText(modal.getJugadorDescription());
-        suitedForTV.setText("Suited for " + modal.getBestSuitedFor());
+        PosicionTV.setText("Posicion: " + modal.getBestPosicion());
         priceTV.setText("Precio:" + modal.getJugadorPrice()+"€");
         Picasso.get().load(modal.getJugadorImg()).into(jugadorIV);
         Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);

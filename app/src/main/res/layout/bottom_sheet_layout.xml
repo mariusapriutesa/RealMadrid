@@ -45,7 +45,7 @@
 
     <!--text view for displaying jugador best suited for-->
     <TextView
-        android:id="@+id/idTVSuitedFor"
+        android:id="@+id/idTVPosicion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVJugadorDesc"
@@ -60,7 +60,7 @@
         android:id="@+id/idTVJugadorPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVSuitedFor"
+        android:layout_below="@id/idTVPosicion"
         android:layout_margin="4dp"
         android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"

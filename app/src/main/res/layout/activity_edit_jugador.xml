@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--edit text for adding a jugador name-->
+            <!--edit text para adding a jugador name-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorName"
                 style="@style/LoginTextInputLayoutStyle"
@@ -42,7 +42,7 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a jugador price-->
+            <!--edit text para adding a jugador price-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILJugadorPrice"
@@ -71,10 +71,10 @@
                     app:boxStrokeColor="@color/purple_200" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a jugador best suited for-->
+            <!--edit text para añadir al jugador best suited for-->
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILJugadorSuitedFor"
+                android:id="@+id/idTILJugadorPosicion"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtSuitedFor"
+                    android:id="@+id/idEdtPosicion"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
