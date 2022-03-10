@@ -17,63 +17,63 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AddCourseActivity extends AppCompatActivity {
+public class AddJugadorActivity extends AppCompatActivity {
 
     //creating variables for our button, edit text,firebase database, database refrence, progress bar.
-    private Button addCourseBtn;
-    private TextInputEditText courseNameEdt, courseDescEdt, coursePriceEdt, bestSuitedEdt, courseImgEdt, courseLinkEdt;
+    private Button addJugadorBtn;
+    private TextInputEditText jugadorNameEdt, jugadorDescEdt, jugadorPriceEdt, bestSuitedEdt, jugadorImgEdt, jugadorLinkEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     private ProgressBar loadingPB;
-    private String courseID;
+    private String jugadorID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_course);
+        setContentView(R.layout.activity_add_jugador);
         //initializing all our variables.
-        addCourseBtn = findViewById(R.id.idBtnAddCourse);
-        courseNameEdt = findViewById(R.id.idEdtCourseName);
-        courseDescEdt = findViewById(R.id.idEdtCourseDescription);
-        coursePriceEdt = findViewById(R.id.idEdtCoursePrice);
+        addJugadorBtn = findViewById(R.id.idBtnAddJugador);
+        jugadorNameEdt = findViewById(R.id.idEdtJugadorName);
+        jugadorDescEdt = findViewById(R.id.idEdtJugadorDescription);
+        jugadorPriceEdt = findViewById(R.id.idEdtJugadorPrice);
         bestSuitedEdt = findViewById(R.id.idEdtSuitedFor);
-        courseImgEdt = findViewById(R.id.idEdtCourseImageLink);
-        courseLinkEdt = findViewById(R.id.idEdtCourseLink);
+        jugadorImgEdt = findViewById(R.id.idEdtJugadorImageLink);
+        jugadorLinkEdt = findViewById(R.id.idEdtJugadorLink);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
         //on below line creating our database reference.
-        databaseReference = firebaseDatabase.getReference("Courses");
-        //adding click listener for our add course button.
-        addCourseBtn.setOnClickListener(new View.OnClickListener() {
+        databaseReference = firebaseDatabase.getReference("Jugadores");
+        //adding click listener for our add jugador button.
+        addJugadorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingPB.setVisibility(View.VISIBLE);
                 //getting data from our edit text.
-                String courseName = courseNameEdt.getText().toString();
-                String courseDesc = courseDescEdt.getText().toString();
-                String coursePrice = coursePriceEdt.getText().toString();
+                String jugadorName = jugadorNameEdt.getText().toString();
+                String jugadorDesc = jugadorDescEdt.getText().toString();
+                String jugadorPrice = jugadorPriceEdt.getText().toString();
                 String bestSuited = bestSuitedEdt.getText().toString();
-                String courseImg = courseImgEdt.getText().toString();
-                String courseLink = courseLinkEdt.getText().toString();
-                courseID = courseName;
+                String jugadorImg = jugadorImgEdt.getText().toString();
+                String jugadorLink = jugadorLinkEdt.getText().toString();
+                jugadorID = jugadorName;
                 //on below line we are passing all data to our modal class.
-                com.example.realmadrid.CourseRVModal courseRVModal = new com.example.realmadrid.CourseRVModal(courseID, courseName, courseDesc, coursePrice, bestSuited, courseImg, courseLink);
+                JugadorRVModal jugadorRVModal = new JugadorRVModal(jugadorID, jugadorName, jugadorDesc, jugadorPrice, bestSuited, jugadorImg, jugadorLink);
                 //on below line we are calling a add value event to pass data to firebase database.
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         //on below line we are setting data in our firebase database.
-                        databaseReference.child(courseID).setValue(courseRVModal);
+                        databaseReference.child(jugadorID).setValue(jugadorRVModal);
                         //displaying a toast message.
-                        Toast.makeText(AddCourseActivity.this, "Course Added..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddJugadorActivity.this, "Jugador Added..", Toast.LENGTH_SHORT).show();
                         //starting a main activity.
-                        startActivity(new Intent(AddCourseActivity.this, com.example.realmadrid.MainActivity.class));
+                        startActivity(new Intent(AddJugadorActivity.this, com.example.realmadrid.MainActivity.class));
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         //displaying a failure message on below line.
-                        Toast.makeText(AddCourseActivity.this, "Fail to add Course..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddJugadorActivity.this, "Fail to add Jugador..", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

@@ -14,11 +14,11 @@
 
 
         <activity
-            android:name=".EditCourseActivity"
-            android:label="Edit Course" />
+            android:name=".EditJugadorActivity"
+            android:label="Edit Jugador" />
         <activity
-            android:name=".AddCourseActivity"
-            android:label="Add Course" />
+            android:name=".AddJugadorActivity"
+            android:label="Add Jugador" />
         <activity
             android:name=".RegisterActivity"
             android:label="Register" />

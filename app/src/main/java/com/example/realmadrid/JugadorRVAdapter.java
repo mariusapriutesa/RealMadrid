@@ -17,25 +17,25 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHolder> {
+public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.ViewHolder> {
     //creating variables for our list, context, interface and position.
-    private ArrayList<com.example.realmadrid.CourseRVModal> courseRVModalArrayList;
+    private ArrayList<JugadorRVModal> jugadorRVModalArrayList;
     private Context context;
-    private CourseClickInterface courseClickInterface;
+    private JugadorClickInterface jugadorClickInterface;
     int lastPos = -1;
 
     //creating a constructor.
-    public CourseRVAdapter(ArrayList<com.example.realmadrid.CourseRVModal> courseRVModalArrayList, Context context, CourseClickInterface courseClickInterface) {
-        this.courseRVModalArrayList = courseRVModalArrayList;
+    public JugadorRVAdapter(ArrayList<JugadorRVModal> jugadorRVModalArrayList, Context context, JugadorClickInterface jugadorClickInterface) {
+        this.jugadorRVModalArrayList = jugadorRVModalArrayList;
         this.context = context;
-        this.courseClickInterface = courseClickInterface;
+        this.jugadorClickInterface = jugadorClickInterface;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //inflating our layout file on below line.
-        View view = LayoutInflater.from(context).inflate(R.layout.course_rv_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.jugador_rv_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -43,16 +43,16 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         //setting data to our recycler view item on below line.
-        com.example.realmadrid.CourseRVModal courseRVModal = courseRVModalArrayList.get(position);
-        holder.courseTV.setText(courseRVModal.getCourseName());
-        holder.coursePriceTV.setText("Rs. " + courseRVModal.getCoursePrice());
-        Picasso.get().load(courseRVModal.getCourseImg()).into(holder.courseIV);
+        JugadorRVModal jugadorRVModal = jugadorRVModalArrayList.get(position);
+        holder.jugadorTV.setText(jugadorRVModal.getJugadorName());
+        holder.jugadorPriceTV.setText("Precio. " + jugadorRVModal.getJugadorPrice());
+        Picasso.get().load(jugadorRVModal.getJugadorImg()).into(holder.jugadorIV);
         //adding animation to recycler view item on below line.
         setAnimation(holder.itemView, position);
-        holder.courseIV.setOnClickListener(new View.OnClickListener() {
+        holder.jugadorIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                courseClickInterface.onCourseClick(position);
+                jugadorClickInterface.onJugadorClick(position);
             }
         });
     }
@@ -68,25 +68,25 @@ public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return courseRVModalArrayList.size();
+        return jugadorRVModalArrayList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         //creating variable for our image view and text view on below line.
-        private ImageView courseIV;
-        private TextView courseTV, coursePriceTV;
+        private ImageView jugadorIV;
+        private TextView jugadorTV, jugadorPriceTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //initializing all our variables on below line.
-            courseIV = itemView.findViewById(R.id.idIVCourse);
-            courseTV = itemView.findViewById(R.id.idTVCOurseName);
-            coursePriceTV = itemView.findViewById(R.id.idTVCousePrice);
+            jugadorIV = itemView.findViewById(R.id.idIVJugador);
+            jugadorTV = itemView.findViewById(R.id.idTVJUgadorName);
+            jugadorPriceTV = itemView.findViewById(R.id.idTVCousePrice);
         }
     }
 
     //creating a interface for on click
-    public interface CourseClickInterface {
-        void onCourseClick(int position);
+    public interface JugadorClickInterface {
+        void onJugadorClick(int position);
     }
 }

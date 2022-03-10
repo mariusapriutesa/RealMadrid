@@ -13,34 +13,34 @@
         android:layout_height="wrap_content"
         android:background="@color/black_shade_1">
 
-        <!--image view for our course-->
+        <!--image view for our jugador-->
         <ImageView
-            android:id="@+id/idIVCourse"
+            android:id="@+id/idIVJugador"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop" />
 
-        <!--text view for course name-->
+        <!--text view for jugador name-->
         <TextView
-            android:id="@+id/idTVCOurseName"
+            android:id="@+id/idTVJUgadorName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idIVCourse"
+            android:layout_below="@id/idIVJugador"
             android:layout_margin="3dp"
             android:layout_toStartOf="@id/idTVCousePrice"
             android:layout_toLeftOf="@id/idTVCousePrice"
             android:padding="4dp"
-            android:text="Course Name"
+            android:text="Jugador Name"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <!--text view for course price-->
+        <!--text view for jugador price-->
         <TextView
             android:id="@+id/idTVCousePrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/idIVCourse"
+            android:layout_below="@id/idIVJugador"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_margin="3dp"

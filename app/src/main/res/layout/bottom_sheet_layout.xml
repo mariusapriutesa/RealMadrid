@@ -6,63 +6,63 @@
     android:background="@color/black_shade_1"
     android:padding="4dp">
 
-    <!--text view for displaying course name-->
+    <!--text view for displaying jugador name-->
     <TextView
-        android:id="@+id/idTVCourseName"
+        android:id="@+id/idTVJugadorName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:padding="4dp"
-        android:text="Course Name"
+        android:text="Jugador Name"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <!--image view for displaying course image-->
+    <!--image view for displaying jugador image-->
 
     <ImageView
-        android:id="@+id/idIVCourse"
+        android:id="@+id/idIVJugador"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@id/idTVCourseName"
+        android:layout_below="@id/idTVJugadorName"
         android:layout_centerVertical="true"
         android:layout_margin="4dp"
         android:padding="4dp"
         android:src="@drawable/ic_launcher_background" />
 
-    <!--text view for displaying course description-->
+    <!--text view for displaying jugadordescription-->
     <TextView
-        android:id="@+id/idTVCourseDesc"
+        android:id="@+id/idTVJugadorDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCourseName"
+        android:layout_below="@id/idTVJugadorName"
         android:layout_margin="4dp"
-        android:layout_toEndOf="@id/idIVCourse"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_toEndOf="@id/idIVJugador"
+        android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"
         android:text="Description"
         android:textColor="@color/white" />
 
-    <!--text view for displaying course best suited for-->
+    <!--text view for displaying jugador best suited for-->
     <TextView
         android:id="@+id/idTVSuitedFor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCourseDesc"
+        android:layout_below="@id/idTVJugadorDesc"
         android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"
         android:text="Suited for"
         android:textColor="@color/white" />
 
-    <!--text view for displaying course price-->
+    <!--text view for displaying jugador price-->
     <TextView
-        android:id="@+id/idTVCoursePrice"
+        android:id="@+id/idTVJugadorPrice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/idTVSuitedFor"
         android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_toRightOf="@id/idIVJugador"
         android:padding="3dp"
         android:text="Price"
         android:textColor="@color/white"
@@ -73,21 +73,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCoursePrice"
+        android:layout_below="@id/idTVJugadorPrice"
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <!--button for editing course-->
+        <!--button for editing jugador-->
         <Button
-            android:id="@+id/idBtnEditCourse"
+            android:id="@+id/idBtnEditJugador"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
-            android:text="Edit Course"
+            android:text="Edit Jugador"
             android:textAllCaps="false" />
 
-        <!--button for viewing course details-->
+        <!--button for viewing jugador details-->
         <Button
             android:id="@+id/idBtnVIewDetails"
             android:layout_width="0dp"

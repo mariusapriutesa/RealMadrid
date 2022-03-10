@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black_shade_1"
-    tools:context=".AddCourseActivity">
+    tools:context=".AddJugadorActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,22 +16,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--edit text for course name-->
+            <!--edit text for jugador name-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseName"
+                android:id="@+id/idTILJugadorName"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Name"
+                android:hint="Enter Jugador Name"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseName"
+                    android:id="@+id/idEdtJugadorName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -42,23 +42,23 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course price-->
+            <!--edit text for jugadore price-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCoursePrice"
+                android:id="@+id/idTILJugadorPrice"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Price"
+                android:hint="Enter Jugador Price"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/purple_200"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCoursePrice"
+                    android:id="@+id/idEdtJugadorPrice"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -70,16 +70,16 @@
                     app:boxStrokeColor="@color/purple_200" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course suited for-->
+            <!--edit text for jugador suited for-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseSuitedFor"
+                android:id="@+id/idTILJugadorSuitedFor"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Suited For"
+                android:hint="Enter Jugador Suited For"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
@@ -96,22 +96,22 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course image link-->
+            <!--edit text for jugador image link-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseImageLink"
+                android:id="@+id/idTILJugadorImageLink"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Image Link"
+                android:hint="Enter Jugador Image Link"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseImageLink"
+                    android:id="@+id/idEdtJugadorImageLink"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -122,22 +122,22 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for course link-->
+            <!--edit text for jugador link-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseLink"
+                android:id="@+id/idTILJugadorLink"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Link"
+                android:hint="Enter Jugador Link"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseLink"
+                    android:id="@+id/idEdtJugadorLink"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -149,22 +149,22 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--edit text for course description-->
+            <!--edit text for jugador description-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseDescription"
+                android:id="@+id/idTILJugadorDescription"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Description"
+                android:hint="Enter Jugador Description"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseDescription"
+                    android:id="@+id/idEdtJugadorDescription"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
@@ -175,9 +175,9 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--button for adding a new course-->
+            <!--button for adding a new jugador-->
             <Button
-                android:id="@+id/idBtnAddCourse"
+                android:id="@+id/idBtnAddJugador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -185,7 +185,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/button_back"
-                android:text="Add Your Course"
+                android:text="Add Your Jugador"
                 android:textAllCaps="false" />
 
 
