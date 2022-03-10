@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "584690746205",
+    "firebase_url": "https://realmadrid-cad3b-default-rtdb.firebaseio.com",
+    "project_id": "realmadrid-cad3b",
+    "storage_bucket": "realmadrid-cad3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584690746205:android:d7ac94f7e8e0caff2d9eb4",
+        "android_client_info": {
+          "package_name": "com.example.realmadrid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "584690746205-a8a1esv4ej1cvdcv6j9urhcbmo60sfge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbQ4SiUakUODkYY-oG_s0Uinpf31QZ0Ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "584690746205-a8a1esv4ej1cvdcv6j9urhcbmo60sfge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
