@@ -23,7 +23,7 @@ public class JugadorRVModal implements Parcelable {
     }
 
 
-    //creating an empty constructor.
+    //creando un constructor vacio.
     public JugadorRVModal() {
 
     }

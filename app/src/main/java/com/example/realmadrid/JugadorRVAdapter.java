@@ -18,13 +18,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.ViewHolder> {
-    //creating variables for our list, context, interface and position.
+    //creando variables para nuestra lista, contexto, interfaz y posición.
     private ArrayList<JugadorRVModal> jugadorRVModalArrayList;
     private Context context;
     private JugadorClickInterface jugadorClickInterface;
     int lastPos = -1;
 
-    //creating a constructor.
+    //creando los  constructores.
     public JugadorRVAdapter(ArrayList<JugadorRVModal> jugadorRVModalArrayList, Context context, JugadorClickInterface jugadorClickInterface) {
         this.jugadorRVModalArrayList = jugadorRVModalArrayList;
         this.context = context;
@@ -34,7 +34,7 @@ public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //inflating our layout file on below line.
+        // inflando un archivo de diseño en la línea de abajo.
         View view = LayoutInflater.from(context).inflate(R.layout.jugador_rv_item, parent, false);
         return new ViewHolder(view);
     }
@@ -42,12 +42,12 @@ public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.View
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        //setting data to our recycler view item on below line.
+        //configurando datos para nuestro elemento de RecyclerView en la línea de abajo.
         JugadorRVModal jugadorRVModal = jugadorRVModalArrayList.get(position);
         holder.jugadorTV.setText(jugadorRVModal.getJugadorName());
         holder.jugadorPriceTV.setText("Precio. " + jugadorRVModal.getJugadorPrice());
         Picasso.get().load(jugadorRVModal.getJugadorImg()).into(holder.jugadorIV);
-        //adding animation to recycler view item on below line.
+        // agregando animación al los elementos de recycleView en la línea de abajo.
         setAnimation(holder.itemView, position);
         holder.jugadorIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.View
 
     private void setAnimation(View itemView, int position) {
         if (position > lastPos) {
-            //on below line we are setting animation.
+            // en la línea de abajo estamos configurando la animación.
             Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
             itemView.setAnimation(animation);
             lastPos = position;
@@ -72,7 +72,7 @@ public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.View
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        //creating variable for our image view and text view on below line.
+        //creando variable para nuestra vista de imagen y vista de texto en la línea de abajo.
         private ImageView jugadorIV;
         private TextView jugadorTV, jugadorPriceTV;
 
@@ -85,7 +85,7 @@ public class JugadorRVAdapter extends RecyclerView.Adapter<JugadorRVAdapter.View
         }
     }
 
-    //creating a interface for on click
+    //creando una interfaz para hacer clic
     public interface JugadorClickInterface {
         void onJugadorClick(int position);
     }

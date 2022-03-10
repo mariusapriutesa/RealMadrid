@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.JugadorClickInterface {
 
-    //creating variables for fab, firebase database, progress bar, list, adapter,firebase auth, recycler view and relative layout.
+    //creando variables para fab, firebase database, progress bar, list, adapter,firebase auth, recycler view and relative layout.
     private FloatingActionButton addJugadorFAB;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -57,52 +57,52 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
         jugadorRVModalArrayList = new ArrayList<>();
-        //on below line we are getting database reference.
+        // en la línea de abajo estamos obteniendo la referencia de la base de datos.
         databaseReference = firebaseDatabase.getReference("Jugadores");
-        //on below line adding a click listener for our floating action button.
+        // En la línea de abajo agregando un click listener para nuestro floating action button.
         addJugadorFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //opening a new activity for adding a jugador.
+                //abrir una nueva actividad para agregar un jugador.
                 Intent i = new Intent(MainActivity.this, AddJugadorActivity.class);
                 startActivity(i);
             }
         });
-        //on below line initializing our adapter class.
+        // en la línea de abajo inicializando nuestra clase de adaptador.
         jugadorRVAdapter = new JugadorRVAdapter(jugadorRVModalArrayList, this, this::onJugadorClick);
-        //setting layout malinger to recycler view on below line.
+        // configurando el simulador de diseño para la vista del reciclador en la línea de abajo.
         jugadorRV.setLayoutManager(new LinearLayoutManager(this));
-        //setting adapter to recycler view on below line.
+        //configurando el adaptador a recycler view abajo.
         jugadorRV.setAdapter(jugadorRVAdapter);
-        //on below line calling a method to fetch jugadores from database.
+        // en la línea de abajo llamando a un método para obtener jugadores de la base de datos.
         getJugadores();
     }
 
     private void getJugadores() {
-        //on below line clearing our list.
+        // en la línea de abajo limpiando nuestra lista.
         jugadorRVModalArrayList.clear();
-        //on below line we are calling add child event listener method to read the data.
+        // en la línea de abajo estamos llamando al método add child event listener para leer los datos.
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                //on below line we are hiding our progress bar.
+                //en la línea de abajo estamos ocultando nuestra barra de progreso.
                 loadingPB.setVisibility(View.GONE);
-                //adding snapshot to our array list on below line.
+                // agregando una instantánea a nuestra lista de matrices en la línea de abajo.
                 jugadorRVModalArrayList.add(snapshot.getValue(JugadorRVModal.class));
-                //notifying our adapter that data has changed.
+                //notificando a nuestro adaptador que los datos han cambiado.
                 jugadorRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                //this method is called when new child is added we are notifying our adapter and making progress bar visibility as gone.
+                //este método se llama cuando se agrega un nuevo hijo, estamos notificando a nuestro adaptador y haciendo que la visibilidad de la barra de progreso desaparezca.
                 loadingPB.setVisibility(View.GONE);
                 jugadorRVAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                //notifying our adapter when child is removed.
+                // notificando a nuestro adaptador cuando se elimine el niño.
                 jugadorRVAdapter.notifyDataSetChanged();
                 loadingPB.setVisibility(View.GONE);
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                //notifying our adapter when child is moved.
+                // notificando a nuestro adaptador cuando se mueve al niño.
                 jugadorRVAdapter.notifyDataSetChanged();
                 loadingPB.setVisibility(View.GONE);
             }
@@ -124,21 +124,21 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
 
     @Override
     public void onJugadorClick(int position) {
-        //calling a method to display a bottom sheet on below line.
+        // llamando a un método para mostrar una hoja inferior en la línea de abajo.
         displayBottomSheet(jugadorRVModalArrayList.get(position));
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //adding a click listner for option selected on below line.
+        // agregando un clik list para la opción seleccionada en la línea de abajo.
         int id = item.getItemId();
         switch (id) {
             case R.id.idLogOut:
-                //displaying a toast message on user logged out inside on click.
+                //mostrando a toast message en el usuario cerró la sesión en el interior al hacer clic.
                 Toast.makeText(getApplicationContext(), "User Logged Out", Toast.LENGTH_LONG).show();
-                //on below line we are signing out our user.
+                // En la línea inferior estamos cerrando la sesión de nuestra usuaria.
                 mAuth.signOut();
-                //on below line we are opening our login activity.
+                // en la línea de abajo estamos abriendo nuestra actividad de inicio de sesión.
                 Intent i = new Intent(MainActivity.this, com.example.realmadrid.LoginActivity.class);
                 startActivity(i);
                 this.finish();
@@ -150,31 +150,31 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //on below line we are inflating our menu file for displaying our menu options.
+        //en la línea de abajo estamos inflando nuestro archivo de menú para mostrar nuestras opciones de menú.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     private void displayBottomSheet(JugadorRVModal modal) {
-        //on below line we are creating our bottom sheet dialog.
+        // en la línea de abajo estamos creando nuestro cuadro de diálogo de hoja inferior.
         final BottomSheetDialog bottomSheetTeachersDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
-        //on below line we are inflating our layout file for our bottom sheet.
+        //en la línea de abajo estamos inflando un archivo de diseño para su hoja inferior.
         View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_layout, homeRL);
-        //setting content view for bottom sheet on below line.
+        // configurando la vista de contenido para la hoja inferior en la línea de abajo.
         bottomSheetTeachersDialog.setContentView(layout);
-        //on below line we are setting a cancelable
+        // en la línea de abajo estamos configurando un cancelable
         bottomSheetTeachersDialog.setCancelable(false);
         bottomSheetTeachersDialog.setCanceledOnTouchOutside(true);
-        //calling a method to display our bottom sheet.
+        //llamando a un método para mostrar nuestra última hoja.
         bottomSheetTeachersDialog.show();
-        //on below line we are creating variables for our text view and image view inside bottom sheet
-        //and initialing them with their ids.
+        // en la línea de abajo estamos creando variables para nuestra vista de texto y vista de imagen dentro de la hoja inferior
+        //e inicializarlos con sus identificaciones.
         TextView jugadorNameTV = layout.findViewById(R.id.idTVJugadorName);
         TextView jugadorDescTV = layout.findViewById(R.id.idTVJugadorDesc);
         TextView suitedForTV = layout.findViewById(R.id.idTVSuitedFor);
         TextView priceTV = layout.findViewById(R.id.idTVJugadorPrice);
         ImageView jugadorIV = layout.findViewById(R.id.idIVJugador);
-        //on below line we are setting data to different views on below line.
+        // en la línea de abajo estamos configurando datos para diferentes vistas en la línea de abajo.
         jugadorNameTV.setText(modal.getJugadorName());
         jugadorDescTV.setText(modal.getJugadorDescription());
         suitedForTV.setText("Suited for " + modal.getBestSuitedFor());
@@ -183,22 +183,22 @@ public class MainActivity extends AppCompatActivity implements JugadorRVAdapter.
         Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
         Button editBtn = layout.findViewById(R.id.idBtnEditJugador);
 
-        //adding on click listener for our edit button.
+        //agregando el click listener para nuestro edit button.
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //on below line we are opening our EditJugadorActivity on below line.
+                //en la línea de abajo estamos abriendo nuestro EditJugadorActivity en la línea de abajo.
                 Intent i = new Intent(MainActivity.this, EditJugadorActivity.class);
-                //on below line we are passing our jugador modal
+                //en la línea de abajo estamos pasando nuestro jugador modal
                 i.putExtra("jugador", modal);
                 startActivity(i);
             }
         });
-        //adding click listener for our view button on below line.
+        //adding click listener para nuestro botón de vista en la línea de abajo.
         viewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //on below line we are navigating to browser for displaying jugador details from its url
+                //en la línea de abajo estamos navegando al navegador para mostrar los detalles del jugador desde su url
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(modal.getJugadorLink()));
                 startActivity(i);

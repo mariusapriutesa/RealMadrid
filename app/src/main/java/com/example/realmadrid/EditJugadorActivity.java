@@ -22,13 +22,13 @@ import java.util.Map;
 
 public class EditJugadorActivity extends AppCompatActivity {
 
-    //creating variables for our edit text, firebase database, database reference, jugador rv modal,progress bar.
+    //creando variables para nuestro texto de edición, base de datos firebase, referencia de base de datos, jugador rv modal, barra de progreso.
     private TextInputEditText jugadorNameEdt, jugadorDescEdt, jugadorPriceEdt, bestSuitedEdt, jugadorImgEdt, jugadorLinkEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     JugadorRVModal jugadorRVModal;
     private ProgressBar loadingPB;
-    //creating a string for our jugador id.
+    //creating a string para nuestro jugador id.
     private String jugadorID;
 
 
@@ -36,7 +36,7 @@ public class EditJugadorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_jugador);
-        //initializing all our variables on below line.
+        //inicializando todas nuestras variables en la línea de abajo.
         Button addJugadorBtn = findViewById(R.id.idBtnAddJugador);
         jugadorNameEdt = findViewById(R.id.idEdtJugadorName);
         jugadorDescEdt = findViewById(R.id.idEdtJugadorDescription);
@@ -46,12 +46,12 @@ public class EditJugadorActivity extends AppCompatActivity {
         jugadorLinkEdt = findViewById(R.id.idEdtJugadorLink);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //on below line we are getting our modal class on which we have passed.
+        //en la línea de abajo estamos obteniendo nuestra clase modal en la que hemos pasado.
         jugadorRVModal = getIntent().getParcelableExtra("jugador");
         Button deleteJugadorBtn = findViewById(R.id.idBtnDeleteJugador);
 
         if (jugadorRVModal != null) {
-            //on below line we are setting data to our edit text from our modal class.
+            //en la línea de abajo estamos configurando datos para nuestro texto de edición de nuestra clase modal.
             jugadorNameEdt.setText(jugadorRVModal.getJugadorName());
             jugadorPriceEdt.setText(jugadorRVModal.getJugadorPrice());
             bestSuitedEdt.setText(jugadorRVModal.getBestSuitedFor());
@@ -61,22 +61,22 @@ public class EditJugadorActivity extends AppCompatActivity {
             jugadorID = jugadorRVModal.getJugadorId();
         }
 
-        //on below line we are initialing our database reference and we are adding a child as our jugador id.
+        //en la línea de abajo estamos inicializando nuestra referencia de base de datos y estamos agregando un hijo como nuestra identificación de jugador.
         databaseReference = firebaseDatabase.getReference("Jugadores").child(jugadorID);
-        //on below line we are adding click listener for our add jugador button.
+        //en la línea de abajo estamos agregando un oyente de clics para nuestro botón de agregar jugador.
         addJugadorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //on below line we are making our progress bar as visible.
+                //en la línea de abajo estamos haciendo que nuestra barra de progreso sea visible.
                 loadingPB.setVisibility(View.VISIBLE);
-                //on below line we are getting data from our edit text.
+                //en la línea de abajo estamos obteniendo datos de nuestro texto de edición.
                 String jugadorName = jugadorNameEdt.getText().toString();
                 String jugadorDesc = jugadorDescEdt.getText().toString();
                 String jugadorPrice = jugadorPriceEdt.getText().toString();
                 String bestSuited = bestSuitedEdt.getText().toString();
                 String jugadorImg = jugadorImgEdt.getText().toString();
                 String jugadorLink = jugadorLinkEdt.getText().toString();
-                //on below line we are creating a map for passing a data using key and value pair.
+                //en la línea de abajo estamos creando un mapa para pasar datos usando un par de clave y valor.
                 Map<String, Object> map = new HashMap<>();
                 map.put("jugadorName", jugadorName);
                 map.put("jugadorDescription", jugadorDesc);
@@ -86,34 +86,34 @@ public class EditJugadorActivity extends AppCompatActivity {
                 map.put("jugadorLink", jugadorLink);
                 map.put("jugadorId", jugadorID);
 
-                //on below line we are calling a database reference on add value event listener and on data change method
+                //en la línea de abajo estamos llamando a una referencia de base de datos en el detector de eventos de valor agregado y en el método de cambio de datos
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        //making progress bar visibility as gone.
+                        // haciendo que la visibilidad de la barra de progreso desaparezca.
                         loadingPB.setVisibility(View.GONE);
-                        //adding a map to our database.
+                        //añadiendo un mapa a nuestra base de datos.
                         databaseReference.updateChildren(map);
-                        //on below line we are displaying a toast message.
-                        Toast.makeText(EditJugadorActivity.this, "Jugador Updated..", Toast.LENGTH_SHORT).show();
-                        //opening a new activity after updating our coarse.
+                        //en la línea de abajo estamos mostrando un mensaje de brindis.
+                        Toast.makeText(EditJugadorActivity.this, "Actualizando Jugador...", Toast.LENGTH_SHORT).show();
+                        //abrir una nueva actividad después de actualizar nuestro Jugador.
                         startActivity(new Intent(EditJugadorActivity.this, com.example.realmadrid.MainActivity.class));
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        //displaying a failure message on toast.
-                        Toast.makeText(EditJugadorActivity.this, "Fail to update jugador..", Toast.LENGTH_SHORT).show();
+                        //mostrando un mensaje de falla en el brindis.
+                        Toast.makeText(EditJugadorActivity.this, "Ha fracasado la actualizacion del jugador..", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
 
-        //adding a click listener for our delete jugador button.
+        //agregando un detector de clics para nuestro botón de eliminar jugador.
         deleteJugadorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //calling a method to delete a jugador.
+                // Llamar a un método para eliminar una jugadora
                 deleteJugador();
             }
         });
@@ -121,11 +121,11 @@ public class EditJugadorActivity extends AppCompatActivity {
     }
 
     private void deleteJugador() {
-        //on below line calling a method to delete the jugador.
+        // en la línea de abajo llamando a un método para borrar el jugador.
         databaseReference.removeValue();
-        //displaying a toast message on below line.
+        //mostrando un mensaje de brindis en la línea de abajo.
         Toast.makeText(this, "Jugador Deleted..", Toast.LENGTH_SHORT).show();
-        //opening a main activity on below line.
+        //abrir una actividad principal en la línea de abajo.
         startActivity(new Intent(EditJugadorActivity.this, com.example.realmadrid.MainActivity.class));
     }
 }

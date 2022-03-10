@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddJugadorActivity extends AppCompatActivity {
 
-    //creating variables for our button, edit text,firebase database, database refrence, progress bar.
+    //creando variables para su botón, edite texto, base de datos firebase, referencia de base de datos, barra de progreso.
     private Button addJugadorBtn;
     private TextInputEditText jugadorNameEdt, jugadorDescEdt, jugadorPriceEdt, bestSuitedEdt, jugadorImgEdt, jugadorLinkEdt;
     FirebaseDatabase firebaseDatabase;
@@ -31,7 +31,7 @@ public class AddJugadorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_jugador);
-        //initializing all our variables.
+        //initializando todas las variables.
         addJugadorBtn = findViewById(R.id.idBtnAddJugador);
         jugadorNameEdt = findViewById(R.id.idEdtJugadorName);
         jugadorDescEdt = findViewById(R.id.idEdtJugadorDescription);
@@ -41,14 +41,14 @@ public class AddJugadorActivity extends AppCompatActivity {
         jugadorLinkEdt = findViewById(R.id.idEdtJugadorLink);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //on below line creating our database reference.
+        //abajo creamos nuestra referencia a la base de datos.
         databaseReference = firebaseDatabase.getReference("Jugadores");
-        //adding click listener for our add jugador button.
+        //agregando click listener para nuestro botón de agregar jugador.
         addJugadorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingPB.setVisibility(View.VISIBLE);
-                //getting data from our edit text.
+                //obtener datos de nuestro texto de edición.
                 String jugadorName = jugadorNameEdt.getText().toString();
                 String jugadorDesc = jugadorDescEdt.getText().toString();
                 String jugadorPrice = jugadorPriceEdt.getText().toString();
@@ -56,23 +56,23 @@ public class AddJugadorActivity extends AppCompatActivity {
                 String jugadorImg = jugadorImgEdt.getText().toString();
                 String jugadorLink = jugadorLinkEdt.getText().toString();
                 jugadorID = jugadorName;
-                //on below line we are passing all data to our modal class.
+                //en la línea de abajo estamos pasando todos los datos a nuestra clase modal.
                 JugadorRVModal jugadorRVModal = new JugadorRVModal(jugadorID, jugadorName, jugadorDesc, jugadorPrice, bestSuited, jugadorImg, jugadorLink);
-                //on below line we are calling a add value event to pass data to firebase database.
+                //en la línea de abajo estamos llamando a un evento de valor agregado para pasar datos a la base de datos de firebase.
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        //on below line we are setting data in our firebase database.
+                        //en la línea de abajo estamos configurando datos en nuestra base de datos de firebase.
                         databaseReference.child(jugadorID).setValue(jugadorRVModal);
                         //displaying a toast message.
                         Toast.makeText(AddJugadorActivity.this, "Jugador Added..", Toast.LENGTH_SHORT).show();
-                        //starting a main activity.
+                        //starting el main activity.
                         startActivity(new Intent(AddJugadorActivity.this, com.example.realmadrid.MainActivity.class));
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        //displaying a failure message on below line.
+                        //mostrando un mensaje de error en la línea de abajo.
                         Toast.makeText(AddJugadorActivity.this, "Fail to add Jugador..", Toast.LENGTH_SHORT).show();
                     }
                 });

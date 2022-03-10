@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    //cretaing variables for edit text and textview, firebase auth, button and progress bar.
+    //creando variables para edittext y textview, firebase auth, button y barra de progreso.
     private TextInputEditText userNameEdt, passwordEdt, confirmPwdEdt;
     private TextView loginTV;
     private Button registerBtn;
@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        //initializing all our variables.
+        // inicializando todas nuestras variables.
         userNameEdt = findViewById(R.id.idEdtUserName);
         passwordEdt = findViewById(R.id.idEdtPassword);
         loadingPB = findViewById(R.id.idPBLoading);
@@ -40,46 +40,46 @@ public class RegisterActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.idBtnRegister);
         mAuth = FirebaseAuth.getInstance();
 
-        //adding on click for login tv.
+        //agragando click para login tv.
         loginTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //opening a login activity on clicking login text.
+                //abriendo el login activity con clicking login text.
                 Intent i = new Intent(RegisterActivity.this, com.example.realmadrid.LoginActivity.class);
                 startActivity(i);
             }
         });
-        //adding click listener for register button.
+        //agregando click listener para register button.
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //hiding our progress bar.
+                //ocultar nuestra barra de progreso.
                 loadingPB.setVisibility(View.VISIBLE);
-                //getting data fro =m our edit text.
+                // obteniendo datos  fro =m  su edit text..
                 String userName = userNameEdt.getText().toString();
                 String pwd = passwordEdt.getText().toString();
                 String cnfPwd = confirmPwdEdt.getText().toString();
-                //checking if the password and confirm password is equal or not.
+                //comprobando si la contraseña y la contraseña de confirmación son iguales o no.
                 if (!pwd.equals(cnfPwd)) {
-                    Toast.makeText(RegisterActivity.this, "Please check both having same password..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Porfavor compruebe si ambos contraseñas son iguales..", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(pwd) && TextUtils.isEmpty(cnfPwd)) {
-                    //checking if the text fields are empty or not.
-                    Toast.makeText(RegisterActivity.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
+                    //comprobando si los campos de texto están vacíos o no.
+                    Toast.makeText(RegisterActivity.this, "Por favor ingrese sus credenciales..", Toast.LENGTH_SHORT).show();
                 } else {
-                    //on below line we are creating a new user by passing email and password.
+                    // en la línea de abajo estamos creando un nuevo usuario al pasar el correo electrónico y la contraseña.
                     mAuth.createUserWithEmailAndPassword(userName, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            //on below line we are checking if the task is success or not.
+                            // en la línea de abajo estamos comprobando si la tarea es exitosa o no.
                             if (task.isSuccessful()) {
-                                //in on success method we are hiding our progress bar and opening a login activity.
+                                // en el método de éxito estamos ocultando nuestra barra de progreso y abriendo una actividad de inicio de sesión.
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(RegisterActivity.this, "User Registered..", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(RegisterActivity.this, com.example.realmadrid.LoginActivity.class);
                                 startActivity(i);
                                 finish();
                             } else {
-                                //in else condition we are displaying a failure toast message.
+                                //en otra condición, estamos mostrando un toast mesaje de falla.
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(RegisterActivity.this, "Fail to register user..", Toast.LENGTH_SHORT).show();
                             }
